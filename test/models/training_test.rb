@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DayUserTest < ActiveSupport::TestCase
+class TrainingTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
