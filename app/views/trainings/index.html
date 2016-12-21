@@ -1,1 +1,8 @@
-<p>hello, world!</p>
+<div class="main_contents">
+<p>日誌を書く</p>
+<%= form_tag('/trainings', method: :post) do %>
+<input placeholder="日付" type="text" name="date"></br>
+<textarea cols="90" name="text" placeholder="練習内容" rows="30"></textarea>
+<input type="submit" value="送信">
+<% end %>
+</div>
