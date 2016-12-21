@@ -1,8 +1,8 @@
 class CreateTrainings < ActiveRecord::Migration
   def change
     create_table :trainings do |t|
-      t.text  :neirong
-      t.datetime  :date
+      t.text  :menu
+      t.datetime  :day
       t.timestamps null: false
     end
   end
