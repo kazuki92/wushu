@@ -22,3 +22,11 @@
     <%= @menu %>
   </span>
 </div>
+
+<div class="for_user">
+  <% if user_signed_in? && current_user.id == @train_day.user_id %>
+    <%= link_to "削除", "/trainings/#{@train_day.id}", method: :delete %>
+    <%= link_to "編集", "/trainings/#{@train_day.id}/edit", method: :get %>
+  <% end %>
+
+</div>

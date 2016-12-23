@@ -1,0 +1,8 @@
+<div class="contents row">
+  <%= form_tag("/trainings/#{@training.id}", method: :patch) do %>
+    <h3>編集する</h3>
+    </br>
+    <textarea cols="90" name="menu" placeholder="練習内容" rows="30"></textarea>
+    <input type="submit" value="送信">
+  <% end %>
+</div>

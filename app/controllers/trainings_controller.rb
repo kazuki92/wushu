@@ -12,24 +12,41 @@ class TrainingsController < ApplicationController
 
 
   def create
-    Training.create(name:training_params[:name], menu:training_params[:menu])
+    Training.create(menu:training_params[:menu], user_id:current_user.id)
   end
 
 
   def show
-    train_day = Training.find(params[:id])
-    @trainings = train_day.created_at.strftime('%Y年 %m月%d日 [%a]')
-    @coach = train_day.name
+    @train_day = Training.find(params[:id])
+    @trainings = @train_day.created_at.strftime('%Y年 %m月%d日 [%a]')
+    @coach = @train_day.user.Nickname
 
-    @menu = train_day.menu
+    @menu = @train_day.menu
   end
 
+  def destroy
+    training = Training.find(params[:id])
+    if training.user_id == current_user.id
+      training.destroy
+    end
+  end
+
+  def edit
+    @training = Training.find(params[:id])
+  end
+
+  def update
+    training = Training.find(params[:id])
+    if training.user_id == current_user.id
+    training.update(training_params)
+    end
+  end
 
 
   private
 
     def training_params
-      params.permit(:name, :menu)
+      params.permit(:menu)
     end
 
     def move_to_index
