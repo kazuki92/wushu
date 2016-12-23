@@ -1,13 +1,13 @@
 <header>
-<a class="post" href="/new">日誌を書く</a>
+<a class="post" href="trainings/new">日誌を書く</a>
 </header>
 
-<div class="train_date">
+<div class="contents">
   <div class="date">
     <% @dates.each do |date| %>
        <% dys = date.created_at.strftime('%x,%X') %>
        <%= dys %>
-      <p><%= link_to "詳細", "/show/#{date.id}", metod: :get %> </p></br>
+      <p><%= link_to "詳細", "trainings/#{date.id}", metod: :get %> </p></br>
     <% end %>
   </div>
 </div>

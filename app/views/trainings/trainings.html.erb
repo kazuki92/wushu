@@ -5,9 +5,10 @@
 <div class="train_date">
   <div class="date">
     <% @dates.each do |date| %>
-       <% dys = date.created_at.strftime('%Y年,%m月%d日[%a]') %><% name = date.name %>
-       <%= dys %>【担当者：<%= name %>】
-      <p><%= link_to "詳細", "/show/#{date.id}", metod: :get %> </p></br>
+       <% dys = date.created_at.strftime('%Y年 %m月%d日[%a]') %><% name = date.name %>
+       【↓担当者：<%= name %>】
+      <p><%= link_to "#{dys}の練習", "/show/#{date.id}", metod: :get %> </p></br>
     <% end %>
   </div>
+  <%= paginate(@dates) %>
 </div>
