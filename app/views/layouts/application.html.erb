@@ -10,7 +10,7 @@
 <body>
   <header class="header">
     <div class="row">
-       <h1 class="grid"><%= link_to "武術隊練習日誌", "/trainings", method: :get %></h1>
+       <h1 class="grid"><%= link_to "武術隊練の！習日誌", "/trainings", method: :get %></h1>
         <% if user_signed_in? %>
           <div class="user_navi col">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
